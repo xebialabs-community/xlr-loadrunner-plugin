@@ -1,4 +1,5 @@
 defaultTasks 'build'
+version = '2.1.0'
 
 apply plugin: "com.github.hierynomus.license"
 apply plugin: 'java'
@@ -11,6 +12,7 @@ sourceCompatibility = 1.6
 targetCompatibility = 1.6
 def apiVersion = '5.0.1'
 def xldeployHome = "$System.env.XLDEPLOY_HOME"
+
 buildscript {
   repositories {
     jcenter()
