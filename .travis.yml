@@ -3,7 +3,7 @@ deploy:
   provider: releases
   api_key:
     secure: CKcSS33eJZmz7LWYAnigzbnwjWGcSotNXNobx7AyNEnFTEAF0WR7H5P3kwGAua3H0bhml3ZDvRAO05kDWjY6Wo4PVxs2Z7Q0LyjcVLlJgyweIJpRVIWqz+6MRTc+jSe4VQmFYHxYGMDqFYk/3jiwLKH2cEEZuobLgOa2dIgx/fBwi1+q6mXFsMaVFw/5u8RCGAgTb5qPWs6UA3GBqD3YR1+AlLIMcxakzhtEWafYCdX/U8dSLofXqMUmV33oCq69NZXwPRkuXKBZaYqvoC+AHGqqUqjGkaHjsMkM05mFodGXZoNeZvZirymJk6vn+7XApDuzePgb88Kv1OC95PPJORfqb+s467bdwpG3xB8xBrfUzJjyKbEOs+jepqwMj1zTCrWksQP1q+cD7ljxgxR2oKFjD0Czo3Fcx+5B4M01INBs/p2mMnvaLEG+H1OQhtd1f/PPtZtFjG5Eqlele21TFlkj75w00B1kcNR08FtgrIvaRs3n6qmtHOhdlLMt+bWXaRKDOoJwJ04EG7XOxiRqvSy42I082N1oN9hTha3/w3Ip+1QJ5+h9VU70ovOIjeBuxoWvWamj9rehcn3sah6jna2d7nEYfYP3ecJpEYN9LDRIAv12GEiJU7c+o/0H3cGg2vwoT0onZfcbH0+5JSiLmmkibQ5v7ECA/yd5XXsEUVY=
-  file: build/libs/xlr-loadrunner-plugin-1.0.0.jar
+  file: build/libs/xlr-loadrunner-plugin-2.1.0.jar
   on:
     all_branches: true
     tags: true

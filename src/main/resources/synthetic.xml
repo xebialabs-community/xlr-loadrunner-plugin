@@ -1,43 +1,39 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<synthetic xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd" 
-           xmlns="http://www.xebialabs.com/deployit/synthetic" 
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<synthetic xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd" xmlns="http://www.xebialabs.com/deployit/synthetic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 <!--
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
-FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS. 
+FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
 -->
-<!--
-########################################################################################################
+<!--  
+   ********************************************************
+   *            HP LoadRunner
+   ********************************************************
 -->
-<type type="loadrunner.wlrun" extends="xlrelease.PythonScript">
-    <property name="iconLocation" default="loadrunner/load-runner-icon.png" hidden="true" />
-    <!-- ######## WinRM Parameters ####### -->
-    <property name="username" category="input"/>
-    <property name="password" password="true" category="input"/>
-    <property name="address" category="input"/>
-    <property name="connectionType" default="WINRM_NATIVE" category="input" />
-    <!-- WINRM_INTERNAL only -->
-    <property name="timeout" default="PT60.000S" 
-              category="input" label="Timeout (WINRM_INTERNAL only)" />
-    <!-- WINRM_NATIVE only -->
-    <property name="allowDelegate" kind="boolean" required="false" default="false" 
-              category="input" label="Allow Delegate (WINRM_NATIVE only)" />
+  <type type="HpTools.RunLoadRunner" extends="xlrelease.PythonScript">
+      <property name="iconLocation" default="HpTools/load-runner-icon.png" hidden="true" />
+      <!-- ######## WinRM Parameters ####### -->
+      <property name="username" category="input"/>
+      <property name="password" password="true" category="input"/>
+      <property name="address" category="input"/>
+      <property name="connectionType" default="WINRM_NATIVE" category="input" />
+      <!-- WINRM_INTERNAL only -->
+      <property name="timeout" default="PT900.000S" category="input" label="Timeout (WINRM_INTERNAL only)" />
+      <!-- WINRM_NATIVE only -->
+      <property name="allowDelegate" kind="boolean" required="false" default="false" category="input" label="Allow Delegate (WINRM_NATIVE only)" />
 
-    <!-- ######## CScript Parameters ####### -->
-    <property name="WlrunExe" category="input" hidden="true" 
-              default="C:\\Program File\\Mecury\\LoadRunner\\Wlrun.exe" />
-    <property name="TestPath" category="input"/>
-    <property name="ResultName" category="input"/>
-    <property name="Analyze" kind="boolean" required="false" default="false" 
-              category="input" label="Analyze results" />
+      <!-- ######## CScript Parameters ####### -->
+      <property name="remotePath" category="input"/>
 
-    <property name="output" required="false" category="output" 
-              description="Console output of the process."/>
-    <property name="err" required="false" category="output" 
-              description="Error stream of the process."/>
-    <property name="exitCode" required="false" category="output" 
-              description="Exit Code of the process."/>
-</type>
+      <!-- ######## HP LoadRunner Parameters ####### -->
+      <property name="testPath" category="input" />
+      <property name="PerScenarioTimeout" category="input" default="10" />
+      <property name="controllerPolliingInterval" category="input" default="10" />
+      <property name="fsTimeout" category="input" default="300" />
+      <property name="output" required="false" category="output" description="Console output of the process."/>
+      <property name="err" required="false" category="output" description="Error stream of the process."/>
+      <property name="exitCode" required="false" category="output" description="Exit code of the process."/>
+  </type>
+
 
 </synthetic>
