@@ -123,6 +123,5 @@ else:
     print
     print "----"
 
-    #sys.exit(exitCode)
-    sys.exit(0)
-
+    sys.exit(exitCode)
+    
