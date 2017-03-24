@@ -1,33 +1,21 @@
-defaultTasks 'build'
-version = '2.1.1'
+plugins {
+    id "com.github.hierynomus.license" version "0.13.1"
+    id "com.xebialabs.xl.docker" version "1.0.0"
+}
 
-apply plugin: "com.github.hierynomus.license"
+version = "2.1.1"
+
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
 
-group = 'com.xebialabs.deployit.community'
-sourceCompatibility = 1.6
-targetCompatibility = 1.6
-def apiVersion = '5.0.1'
-def xldeployHome = "$System.env.XLDEPLOY_HOME"
-
-buildscript {
-  repositories {
-    jcenter()
-  }
-  dependencies {
-    classpath "nl.javadude.gradle.plugins:license-gradle-plugin:0.11.0"
-  }
-}
-
-import org.apache.tools.ant.filters.*
-processResources {
-//    filter ReplaceTokens, tokens: [
-//        "project.version": project.property("version"),
-//        "project.artifactId": project.property("name")
-//    ]
+xlDocker {
+    compileImage = 'xebialabs/xlr_dev_compile'
+    compileVersion = 'v6.1.0.1'
+    runImage = 'xebialabs/xlr_dev_run'
+    runVersion = 'v6.1.0.1'
+    runPortMapping = '15516:5516'
 }
 
 license {
